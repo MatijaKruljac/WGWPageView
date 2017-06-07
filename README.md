@@ -22,7 +22,7 @@ pod "WGWPageView"
 
 ## Author
 
-kruljac.matija@gmail.com, matija.kruljac@undabot.com
+Matija Kruljac, kruljac.matija@gmail.com
 
 ## License
 

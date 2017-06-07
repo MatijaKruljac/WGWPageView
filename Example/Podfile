@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'WGWPageView_Example' do
+  pod 'WGWPageView', :path => '../'
+
+  target 'WGWPageView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

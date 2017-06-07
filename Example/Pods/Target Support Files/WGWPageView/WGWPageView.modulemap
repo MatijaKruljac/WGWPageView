@@ -1,0 +1,6 @@
+framework module WGWPageView {
+  umbrella header "WGWPageView-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -99,7 +99,7 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
             let titleLabel = titleLabels[index]
             let frame = CGRect(
                 x: titleLabel.frame.origin.x-titleLabel.frame.size.width/1.5,
-                y: frame.origin.y,
+                y: self.frame.origin.y,
                 width: titleLabel.frame.size.width,
                 height: titleLabel.frame.size.height)
             scrollRectToVisible(frame, animated: true)
@@ -107,7 +107,7 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
             let titleLabel = titleLabels[index]
             let frame = CGRect(
                 x: titleLabel.frame.origin.x+titleLabel.frame.size.width/1.5,
-                y: frame.origin.y,
+                y: self.frame.origin.y,
                 width: titleLabel.frame.size.width,
                 height: titleLabel.frame.size.height)
             scrollRectToVisible(frame, animated: true)

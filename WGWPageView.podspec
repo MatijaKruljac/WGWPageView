@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WGWPageView'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'WGWPageView is a custom page view with tab for every ViewController.'
 
 # This description is used to generate tags and improve search results.

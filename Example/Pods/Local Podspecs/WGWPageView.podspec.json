@@ -1,18 +1,18 @@
 {
   "name": "WGWPageView",
   "version": "0.1.0",
-  "summary": "A short description of WGWPageView.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/kruljac.matija@gmail.com/WGWPageView",
+  "summary": "WGWPageView is a custom page view with tab for every ViewController.",
+  "description": "`WGWPageView` is a custom page view with tab for every `ViewController`. It contains header view which is customizable. Selected and unselected title color can be set as desired.",
+  "homepage": "https://github.com/MatijaKruljac/WGWPageView",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "kruljac.matija@gmail.com": "matija.kruljac@undabot.com"
+    "kruljac.matija@gmail.com": "kruljac.matija@gmail.com"
   },
   "source": {
-    "git": "https://github.com/kruljac.matija@gmail.com/WGWPageView.git",
+    "git": "https://github.com/MatijaKruljac/WGWPageView.git",
     "tag": "0.1.0"
   },
   "platforms": {

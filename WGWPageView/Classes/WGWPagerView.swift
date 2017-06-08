@@ -73,7 +73,7 @@ public class WGWPagerView: UIView, UIPageViewControllerDelegate, UIPageViewContr
         spineLocationForOrientation = spineLocation
     }
     
-    // mark: UIPageViewControllerDelegate
+    // MARK: UIPageViewControllerDelegate
     
     public func pageViewControllerSupportedInterfaceOrientations(_ pageViewController: UIPageViewController) -> UIInterfaceOrientationMask {
         guard let pageViewControllerSupportedInterfaceOrientations = pageViewControllerSupportedInterfaceOrientations else { return .all }

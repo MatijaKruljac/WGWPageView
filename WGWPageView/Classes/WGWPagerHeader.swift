@@ -69,7 +69,7 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
             CGRect(x: 0,
                    y: frame.origin.y+frame.size.height-1,
                    width: contentSize.width,
-                   height: contentSize.height-1))
+                   height: 1))
         bottomBorder.backgroundColor = .gray
         addSubview(bottomBorder)
     }

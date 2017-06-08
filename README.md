@@ -1,6 +1,6 @@
 # WGWPageView
 
-[![CI Status](http://img.shields.io/travis/kruljac.matija@gmail.com/WGWPageView.svg?style=flat)](https://travis-ci.org/kruljac.matija@gmail.com/WGWPageView)
+[![CI Status](https://api.travis-ci.org/MatijaKruljac/WGWPageView.svg?branch=master)](https://api.travis-ci.org/MatijaKruljac/WGWPageView.svg?branch=master)
 [![Version](https://img.shields.io/cocoapods/v/WGWPageView.svg?style=flat)](http://cocoapods.org/pods/WGWPageView)
 [![License](https://img.shields.io/cocoapods/l/WGWPageView.svg?style=flat)](http://cocoapods.org/pods/WGWPageView)
 [![Platform](https://img.shields.io/cocoapods/p/WGWPageView.svg?style=flat)](http://cocoapods.org/pods/WGWPageView)

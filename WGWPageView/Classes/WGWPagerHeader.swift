@@ -90,7 +90,7 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
         if frame.size.width > longestTitleString * CGFloat(dataSource.count) { return }
 
         if index == titleLabels.count - 1 {
-            let bottomOffset = CGPoint(x: contentSize.width-bounds.size.width, y: 0)
+            let bottomOffset = CGPoint(x: contentSize.width-bounds.size.width, y: frame.origin.y)
             setContentOffset(bottomOffset, animated: true)
         } else if (index == 0) {
             let titleLabel = titleLabels[index]
@@ -99,7 +99,7 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
             let titleLabel = titleLabels[index]
             let frame = CGRect(
                 x: titleLabel.frame.origin.x-titleLabel.frame.size.width/1.5,
-                y: 0,
+                y: frame.origin.y,
                 width: titleLabel.frame.size.width,
                 height: titleLabel.frame.size.height)
             scrollRectToVisible(frame, animated: true)
@@ -107,7 +107,7 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
             let titleLabel = titleLabels[index]
             let frame = CGRect(
                 x: titleLabel.frame.origin.x+titleLabel.frame.size.width/1.5,
-                y: 0,
+                y: frame.origin.y,
                 width: titleLabel.frame.size.width,
                 height: titleLabel.frame.size.height)
             scrollRectToVisible(frame, animated: true)

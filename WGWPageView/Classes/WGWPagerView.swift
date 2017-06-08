@@ -127,28 +127,24 @@ public class WGWPagerView: UIView, UIPageViewControllerDelegate, UIPageViewContr
         }
         return nil
     }
-
+    
     // MARK: - WGWPagerHeaderDelegate
     
     func scrollOnHeaderTitleTap(to index: Int, in direction: UIPageViewControllerNavigationDirection) {
-        guard let dataSource = dataSource else { return }
         indexOfViewController = index
-        let currentViewController = dataSource[index]
-        pager.setViewControllers([currentViewController],
-                                 direction: direction,
-                                 animated: true,
-                                 completion: nil)
-        pagerHeader.changeTitleColor(at: index)
-        pagerHeader.scrollToTheTitle(at: index)
+        updateCurrentViewControlerAndTitle(to: index, in: direction)
     }
     
     func syncCurrentViewControllerAndTitleHeader(for index: Int) {
-        guard let dataSource = dataSource else { return }
         if isTransitionInProgress { return }
-        
-        let currentViewController = dataSource[indexOfViewController]
+        updateCurrentViewControlerAndTitle(to: indexOfViewController, in: .reverse)
+    }
+    
+    private func updateCurrentViewControlerAndTitle(to index: Int, in direction: UIPageViewControllerNavigationDirection) {
+        guard let dataSource = dataSource else { return }
+        let currentViewController = dataSource[index]
         pager.setViewControllers([currentViewController],
-                                 direction: .reverse,
+                                 direction: direction,
                                  animated: true,
                                  completion: nil)
         pagerHeader.changeTitleColor(at: index)

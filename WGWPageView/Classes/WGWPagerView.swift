@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 public class WGWPagerView: UIView, UIPageViewControllerDelegate, UIPageViewControllerDataSource, WGWPagerHeaderDelegate {
-
+    
     private var pager: UIPageViewController!
     private var pagerHeader: WGWPagerHeader!
     
@@ -32,7 +32,7 @@ public class WGWPagerView: UIView, UIPageViewControllerDelegate, UIPageViewContr
             pagerHeader.changeTitleColor(at: 0)
         }
     }
-
+    
     public init(with frame: CGRect) {
         super.init(frame: frame)
     }
@@ -41,8 +41,8 @@ public class WGWPagerView: UIView, UIPageViewControllerDelegate, UIPageViewContr
         super.init(coder: aDecoder)
     }
     
-    public func setupPagerWithHeader(transitionStyle: UIPageViewControllerTransitionStyle, navigationOrientation: UIPageViewControllerNavigationOrientation,
-                              options: [String : Any]?, headerHeight: CGFloat) {
+    public func setupWith(transitionStyle: UIPageViewControllerTransitionStyle, navigationOrientation: UIPageViewControllerNavigationOrientation,
+                           options: [String : Any]?, headerHeight: CGFloat) {
         pagerHeader = WGWPagerHeader(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: headerHeight))
         addSubview(pagerHeader)
         
@@ -55,7 +55,7 @@ public class WGWPagerView: UIView, UIPageViewControllerDelegate, UIPageViewContr
         pagerHeader.wgwPagerHeaderDelegate = self
     }
     
-    public func setupPagerHeder(titles: [String], with font: UIFont, andWith colors: WGWPagerHeaderTitleColors) {
+    public func setupHeaderWith(titles: [String], with font: UIFont, andWith colors: WGWPagerHeaderTitleColors) {
         pagerHeader.font = font
         pagerHeader.dataSource = titles
         pagerHeader.wgwPagerHeaderTitleColors = colors
@@ -81,7 +81,7 @@ public class WGWPagerView: UIView, UIPageViewControllerDelegate, UIPageViewContr
     }
     
     public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool,
-                                     previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+                                   previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
             pagerHeader.changeTitleColor(at: indexOfNextTitle)
             pagerHeader.scrollToTheTitle(at: indexOfNextTitle)
@@ -121,7 +121,7 @@ public class WGWPagerView: UIView, UIPageViewControllerDelegate, UIPageViewContr
     
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let dataSource = dataSource else { return nil }
-
+        
         if indexOfViewController > 0 {
             return dataSource[indexOfViewController-1]
         }

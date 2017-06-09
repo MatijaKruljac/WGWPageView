@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
 //                width: view.frame.size.width,
 //                height: view.frame.size.height - 100))
         
-        wgwPagerView.setupPagerWithHeader(
+        wgwPagerView.setupWith(
             transitionStyle: .scroll,
             navigationOrientation: .horizontal,
             options: [:],
@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
             withSelectedTitleColor: .blue,
             withUnselectedTitleColor: .black)
         
-        wgwPagerView.setupPagerHeder(
+        wgwPagerView.setupHeaderWith(
             titles: ["ViewController 1", "ViewController 2", "ViewController 3", "ViewController 4", "ViewController 5"],
             with: .boldSystemFont(ofSize: 15),
             andWith: wgwPagerHeaderTitleColors)

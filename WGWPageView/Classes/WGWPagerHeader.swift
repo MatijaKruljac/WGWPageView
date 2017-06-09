@@ -39,8 +39,8 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
     var dataSource: [String]? {
         didSet {
             guard let dataSource = dataSource,
-                  let font = font
-            else { return }
+                let font = font
+                else { return }
             for title in dataSource {
                 titleWidths.append(title.width(withConstrainedHeight: frame.size.height, font: font))
             }
@@ -52,15 +52,17 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        isScrollEnabled = false
         canCancelContentTouches = false
+        showsVerticalScrollIndicator = false
+        showsHorizontalScrollIndicator = false
         delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        isScrollEnabled = false
         canCancelContentTouches = false
+        showsVerticalScrollIndicator = false
+        showsHorizontalScrollIndicator = false
         delegate = self
     }
     
@@ -88,30 +90,19 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
         guard let dataSource = dataSource else { return }
         guard let longestTitleString = titleWidths.max() else { return }
         if frame.size.width > longestTitleString * CGFloat(dataSource.count) { return }
-
-        if index == titleLabels.count - 1 {
+        
+        if index == titleLabels.count-1 || index == titleLabels.count-2 {
             let bottomOffset = CGPoint(x: contentSize.width-bounds.size.width, y: frame.origin.y)
             setContentOffset(bottomOffset, animated: true)
         } else if (index == 0) {
-            let titleLabel = titleLabels[index]
-            scrollRectToVisible(titleLabel.frame, animated: true)
-        } else if currentTitleLabelIndex > index {
-            let titleLabel = titleLabels[index]
-            let frame = CGRect(
-                x: titleLabel.frame.origin.x-titleLabel.frame.size.width/1.5,
-                y: self.frame.origin.y,
-                width: titleLabel.frame.size.width,
-                height: titleLabel.frame.size.height)
-            scrollRectToVisible(frame, animated: true)
+            let offset = CGPoint(x: 0, y: frame.origin.y)
+            setContentOffset(offset, animated: true)
         } else {
             let titleLabel = titleLabels[index]
-            let frame = CGRect(
-                x: titleLabel.frame.origin.x+titleLabel.frame.size.width/1.5,
-                y: self.frame.origin.y,
-                width: titleLabel.frame.size.width,
-                height: titleLabel.frame.size.height)
-            scrollRectToVisible(frame, animated: true)
+            let offset = CGPoint(x: titleLabel.frame.origin.x, y: frame.origin.y)
+            setContentOffset(offset, animated: true)
         }
+        
         currentTitleLabelIndex = index
     }
     
@@ -125,7 +116,7 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
     
     private func generateTitleViewsForPages(with longestTitleString: CGFloat) {
         guard let dataSource = dataSource else { return }
-
+        
         if frame.size.width > longestTitleString * CGFloat(dataSource.count) {
             finalWidth = frame.size.width / CGFloat(dataSource.count)
         } else {
@@ -160,6 +151,18 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
             wgwPagerHeaderDelegate?.scrollOnHeaderTitleTap(to: titleLabel.tag, in: .reverse)
         } else {
             wgwPagerHeaderDelegate?.scrollOnHeaderTitleTap(to: titleLabel.tag, in: .forward)
+        }
+    }
+    
+    // MARK: UIScrollViewDelegate
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        contentOffset = CGPoint(x: contentOffset.x, y: 0)
+        if contentOffset.x < 0 {
+            contentOffset = CGPoint(x: 0, y: 0)
+        }
+        if contentOffset.x > contentSize.width-bounds.size.width {
+            contentOffset = CGPoint(x: contentSize.width-bounds.size.width, y: 0)
         }
     }
     

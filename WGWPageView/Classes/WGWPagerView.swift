@@ -88,6 +88,10 @@ public class WGWPagerView: UIView, UIPageViewControllerDelegate, UIPageViewContr
             indexOfViewController = indexOfNextTitle
             isTransitionInProgress = false
         }
+        guard let dataSource = dataSource else { return }
+        if indexOfViewController >= dataSource.count-2 {
+            updateCurrentViewControlerAndTitle(to: indexOfViewController, in: .reverse)
+        }
     }
     
     public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {

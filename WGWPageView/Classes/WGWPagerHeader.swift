@@ -81,7 +81,7 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
         guard let longestTitleString = titleWidths.max() else { return }
         if frame.size.width > longestTitleString * CGFloat(dataSource.count) { return }
         
-        if index == titleLabels.count-1 || index == titleLabels.count-2 {
+        if index >= titleLabels.count-2 {
             let bottomOffset = CGPoint(x: contentSize.width-bounds.size.width, y: frame.origin.y)
             setContentOffset(bottomOffset, animated: true)
         } else if (index == 0) {

@@ -1,9 +1,9 @@
 //
 //  WGWPagerHeaderTitleColors.swift
-//  Pods
+//  WGWPager
 //
 //  Created by Matija Kruljac on 6/12/17.
-//
+//  Copyright © 2017 Matija Kruljac. All rights reserved.
 //
 
 import Foundation

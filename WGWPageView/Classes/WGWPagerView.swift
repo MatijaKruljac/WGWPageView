@@ -137,7 +137,7 @@ public class WGWPagerView: UIView, UIPageViewControllerDelegate, UIPageViewContr
     
     func syncCurrentViewControllerAndTitleHeader(for index: Int) {
         if isTransitionInProgress { return }
-        updateCurrentViewControlerAndTitle(to: indexOfViewController, in: .reverse)
+        updateCurrentViewControlerAndTitle(to: index, in: .reverse)
     }
     
     private func updateCurrentViewControlerAndTitle(to index: Int, in direction: UIPageViewControllerNavigationDirection) {

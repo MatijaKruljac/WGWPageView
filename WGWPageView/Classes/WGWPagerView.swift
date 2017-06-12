@@ -61,6 +61,11 @@ public class WGWPagerView: UIView, UIPageViewControllerDelegate, UIPageViewContr
         pagerHeader.wgwPagerHeaderTitleColors = colors
     }
     
+    public func getVisibleViewController() -> UIViewController? {
+        guard let dataSource = dataSource else { return nil }
+        return dataSource[indexOfViewController]
+    }
+    
     public func setupPageViewControllerSupportedInterfaceOrientations(_ interfaceOrientationMask: UIInterfaceOrientationMask) {
         pageViewControllerSupportedInterfaceOrientations = interfaceOrientationMask
     }

@@ -8,15 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		08109D6D8BA7C0717FF143AF0E4B8FCE /* Pods-WGWPageView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EF09AADAF312E1899736B117D9367E /* Pods-WGWPageView_Tests-dummy.m */; };
-		1EC92FFB40FA7B7039E2B752064490E6 /* WGWPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC224A49143CCD19BAE5DA7F59C2980 /* WGWPagerView.swift */; };
 		20ECC244F5420192CE93BECAB20E03AD /* WGWPageView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 593D3DAF664C8CE3083D132F808C33CF /* WGWPageView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		44C494F4A3E4C7771808F582093B7959 /* WGWPagerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F67A46727AAFA462CE2EE8B34A70E /* WGWPagerHeader.swift */; };
+		3D6124BEBC26C61B79FF4F3D3425E875 /* WGWPageView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 529081564660ADE365CD2C50F8F2D679 /* WGWPageView-dummy.m */; };
 		5561600C959DFE18EA73208BB35D5518 /* Pods-WGWPageView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E99473AA76FE289817162F32E0ACC149 /* Pods-WGWPageView_Example-dummy.m */; };
+		63172FC7897A14D925F52F9F7BE2187A /* WGWPagerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740223E64BA6E62E421FF1D24D754996 /* WGWPagerHeader.swift */; };
+		72B7FF427C926AA553A256008FDD81C4 /* WGWPagerHeaderTitleColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89BCB168B9E3A6ED8D0D8484889F78 /* WGWPagerHeaderTitleColors.swift */; };
 		7E176A49EF13602733D9C1E10C9CC634 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		9DE3A63603E240872D6943556D5F0BE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		A6FEDDFEA50986CBB4B383A062CD63D4 /* WGWPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E40E726FA35F6407710A8596649146 /* WGWPagerView.swift */; };
 		A928C0F5698991400019F86C45B83685 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		AC0B81566D5F26088B7C2C30A775EF06 /* Pods-WGWPageView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 398573988F239A64A0C324344CDC88A9 /* Pods-WGWPageView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EBD971E99082F604C8311C9130CB9ECA /* WGWPageView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 529081564660ADE365CD2C50F8F2D679 /* WGWPageView-dummy.m */; };
 		F85391FDB93DD05ACB817DB954309F2B /* Pods-WGWPageView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46CCFD463D7E46120BDBB9C471AE9215 /* Pods-WGWPageView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		1FF9F5DFDF88C006E744A420A2F7403D /* Pods-WGWPageView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WGWPageView_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		2AF3C3B682CD69704AA602B86F7DCB4B /* Pods-WGWPageView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WGWPageView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2CE5CEB71F13F2FCEB7A884F572B6AD1 /* WGWPageView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = WGWPageView.modulemap; sourceTree = "<group>"; };
+		30E40E726FA35F6407710A8596649146 /* WGWPagerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WGWPagerView.swift; sourceTree = "<group>"; };
 		33E57AF8133A801B9998D07722D56BFD /* Pods-WGWPageView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WGWPageView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		37D213581AE00206AA2189D53374E76E /* Pods-WGWPageView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WGWPageView_Example-resources.sh"; sourceTree = "<group>"; };
 		37EF09AADAF312E1899736B117D9367E /* Pods-WGWPageView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WGWPageView_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -47,16 +49,16 @@
 		398573988F239A64A0C324344CDC88A9 /* Pods-WGWPageView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WGWPageView_Tests-umbrella.h"; sourceTree = "<group>"; };
 		46CCFD463D7E46120BDBB9C471AE9215 /* Pods-WGWPageView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WGWPageView_Example-umbrella.h"; sourceTree = "<group>"; };
 		4835A81D7A1D3EB2182039EA271FE059 /* Pods-WGWPageView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-WGWPageView_Tests.modulemap"; sourceTree = "<group>"; };
-		4FC224A49143CCD19BAE5DA7F59C2980 /* WGWPagerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WGWPagerView.swift; sourceTree = "<group>"; };
 		529081564660ADE365CD2C50F8F2D679 /* WGWPageView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WGWPageView-dummy.m"; sourceTree = "<group>"; };
 		593D3DAF664C8CE3083D132F808C33CF /* WGWPageView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WGWPageView-umbrella.h"; sourceTree = "<group>"; };
 		61AE58B13567BE0CE79A17152EE93F66 /* WGWPageView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WGWPageView.xcconfig; sourceTree = "<group>"; };
 		6485F7528A30ACE0472B936522B06B50 /* Pods-WGWPageView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WGWPageView_Example-frameworks.sh"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		740223E64BA6E62E421FF1D24D754996 /* WGWPagerHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WGWPagerHeader.swift; sourceTree = "<group>"; };
 		747538664575040B72A0AF27B5EB372D /* Pods-WGWPageView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WGWPageView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		7A89BCB168B9E3A6ED8D0D8484889F78 /* WGWPagerHeaderTitleColors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WGWPagerHeaderTitleColors.swift; sourceTree = "<group>"; };
 		7D8E9CD0805FC0F67A50731275ED1F77 /* Pods-WGWPageView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WGWPageView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9D6F67A46727AAFA462CE2EE8B34A70E /* WGWPagerHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WGWPagerHeader.swift; sourceTree = "<group>"; };
 		B9360F966A55766D05889629D0CE2266 /* Pods-WGWPageView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WGWPageView_Tests-resources.sh"; sourceTree = "<group>"; };
 		DA841AF2546BBC9D2EF2EEBE897A2B31 /* Pods_WGWPageView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WGWPageView_Tests.framework; path = "Pods-WGWPageView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D500AECF5D15B29ACF3FA05D1EFBC9 /* Pods-WGWPageView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-WGWPageView_Example.modulemap"; sourceTree = "<group>"; };
@@ -94,13 +96,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11663408CB772B59DA3E2A956C6F00C4 /* WGWPageView */ = {
+		0C4FEEB00AE3B158E37AF5A11C020C1F /* WGWPageView */ = {
 			isa = PBXGroup;
 			children = (
-				B7EA751B829E14561BA97AF16B88B8B6 /* Classes */,
+				339BF1DE75E89748F3209AAB13EF92DE /* Classes */,
 			);
 			name = WGWPageView;
 			path = WGWPageView;
+			sourceTree = "<group>";
+		};
+		339BF1DE75E89748F3209AAB13EF92DE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				740223E64BA6E62E421FF1D24D754996 /* WGWPagerHeader.swift */,
+				7A89BCB168B9E3A6ED8D0D8484889F78 /* WGWPagerHeaderTitleColors.swift */,
+				30E40E726FA35F6407710A8596649146 /* WGWPagerView.swift */,
+			);
+			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		6C01758FEDC3CC9E7F15698567D2966D /* Support Files */ = {
@@ -181,16 +194,6 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		B7EA751B829E14561BA97AF16B88B8B6 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				9D6F67A46727AAFA462CE2EE8B34A70E /* WGWPagerHeader.swift */,
-				4FC224A49143CCD19BAE5DA7F59C2980 /* WGWPagerView.swift */,
-			);
-			name = Classes;
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,7 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				6C01758FEDC3CC9E7F15698567D2966D /* Support Files */,
-				11663408CB772B59DA3E2A956C6F00C4 /* WGWPageView */,
+				0C4FEEB00AE3B158E37AF5A11C020C1F /* WGWPageView */,
 			);
 			name = WGWPageView;
 			path = ../..;
@@ -279,7 +282,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0121A9AE7C064869EA14D03793FA31E5 /* Build configuration list for PBXNativeTarget "WGWPageView" */;
 			buildPhases = (
-				96D35934742C619EF2ED82869350D9D5 /* Sources */,
+				45EC415AC171A63743AF516B3325D9CF /* Sources */,
 				CBEB03816D469410C9750B4DF0B8403C /* Frameworks */,
 				8A0D0D0141020DB17AB7362BF755E5D0 /* Headers */,
 			);
@@ -346,21 +349,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		45EC415AC171A63743AF516B3325D9CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63172FC7897A14D925F52F9F7BE2187A /* WGWPagerHeader.swift in Sources */,
+				72B7FF427C926AA553A256008FDD81C4 /* WGWPagerHeaderTitleColors.swift in Sources */,
+				A6FEDDFEA50986CBB4B383A062CD63D4 /* WGWPagerView.swift in Sources */,
+				3D6124BEBC26C61B79FF4F3D3425E875 /* WGWPageView-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		90C7181BA9A51AB4C8B2EAEA88E986DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5561600C959DFE18EA73208BB35D5518 /* Pods-WGWPageView_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		96D35934742C619EF2ED82869350D9D5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				44C494F4A3E4C7771808F582093B7959 /* WGWPagerHeader.swift in Sources */,
-				1EC92FFB40FA7B7039E2B752064490E6 /* WGWPagerView.swift in Sources */,
-				EBD971E99082F604C8311C9130CB9ECA /* WGWPageView-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

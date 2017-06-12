@@ -15,16 +15,6 @@ protocol WGWPagerHeaderDelegate: class {
     func syncCurrentViewControllerAndTitleHeader(for index: Int)
 }
 
-public struct WGWPagerHeaderTitleColors {
-    public var selectedTitleColor: UIColor = .red
-    public var unselectedTitleColor: UIColor = .black
-    
-    public init(withSelectedTitleColor selectedColor: UIColor, withUnselectedTitleColor unselectedColor: UIColor) {
-        self.selectedTitleColor = selectedColor
-        self.unselectedTitleColor = unselectedColor
-    }
-}
-
 class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
     
     weak var wgwPagerHeaderDelegate: WGWPagerHeaderDelegate?

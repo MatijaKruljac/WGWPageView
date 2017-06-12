@@ -1,5 +1,5 @@
 PODS:
-  - WGWPageView (0.1.0)
+  - WGWPageView (0.1.2)
 
 DEPENDENCIES:
   - WGWPageView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  WGWPageView: 8e71a005ddd02ed9083d31bf794af599300ee994
+  WGWPageView: 4ee04a080849ad70a1f3c772a7b51a2801ff060f
 
 PODFILE CHECKSUM: ba4d4d1f8223bbdc95c405715b67d247e552302f
 

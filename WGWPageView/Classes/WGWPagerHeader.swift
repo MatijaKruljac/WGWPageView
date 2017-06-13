@@ -123,6 +123,7 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
             titleLabel.textAlignment = .center
             titleLabel.text = title
             titleLabel.tag = index
+            titleLabel.font = font
             
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleHeaderLabelTap(_:)))
             tapGestureRecognizer.numberOfTapsRequired = 1

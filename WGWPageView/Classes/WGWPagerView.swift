@@ -61,6 +61,10 @@ public class WGWPagerView: UIView, UIPageViewControllerDelegate, UIPageViewContr
         pagerHeader.wgwPagerHeaderTitleColors = colors
     }
     
+    public func setupBottomSeparator(with height: CGFloat? = nil, andWith color: UIColor? = nil) {
+        pagerHeader.addBottomSeparator(with: height, andWith: color)
+    }
+    
     public func getVisibleViewController() -> UIViewController? {
         guard let dataSource = dataSource else { return nil }
         return dataSource[indexOfViewController]

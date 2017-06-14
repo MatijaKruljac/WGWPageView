@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
         
         let wgwPagerHeaderTitleColors = WGWPagerHeaderTitleColors(
             withSelectedTitleColor: UIColor(red: 0.0902, green: 0.5608, blue: 0.4667, alpha: 1.0),
-            withUnselectedTitleColor: .black)
+            withUnselectedTitleColor: UIColor(red: 0.3882, green: 0.3882, blue: 0.3882, alpha: 1.0))
         
         guard let font = UIFont(name: "HelveticaNeue-Medium", size: 14) else { return }
         
@@ -39,6 +39,8 @@ class MainViewController: UIViewController {
             titles: ["ViewController 1", "ViewController 2", "ViewController 3", "ViewController 4", "ViewController 5"],
             with: font,
             andWith: wgwPagerHeaderTitleColors)
+        
+        wgwPagerView.setupBottomSeparator(with: 0.5, andWith: UIColor(red: 0.3882, green: 0.3882, blue: 0.3882, alpha: 1.0))
         
         wgwPagerView.dataSource = generateViewControllers()
         

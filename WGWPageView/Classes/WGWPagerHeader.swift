@@ -36,7 +36,6 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
             }
             guard let longestTitleString = titleWidths.max() else { return }
             generateTitleViewsForPages(with: longestTitleString)
-            addBottomBorder()
         }
     }
     
@@ -56,14 +55,26 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
         delegate = self
     }
     
-    private func addBottomBorder() {
-        let bottomBorder = UIView(frame:
-            CGRect(x: 0,
-                   y: frame.origin.y+frame.size.height-1,
-                   width: contentSize.width,
-                   height: 1))
-        bottomBorder.backgroundColor = .gray
-        addSubview(bottomBorder)
+    func addBottomSeparator(with height: CGFloat? = nil, andWith color: UIColor? = nil) {
+        var bottomSeparatorFrame: CGRect!
+        if let height = height {
+            bottomSeparatorFrame = CGRect(x: 0,
+                           y: frame.origin.y+frame.size.height-height,
+                           width: contentSize.width,
+                           height: height)
+        } else {
+            bottomSeparatorFrame = CGRect(x: 0,
+                           y: frame.origin.y+frame.size.height-1.0,
+                           width: contentSize.width,
+                           height: 1.0)
+        }
+        let bottomSeparator = UIView(frame: bottomSeparatorFrame)
+        if let color = color {
+            bottomSeparator.backgroundColor = color
+        } else {
+            bottomSeparator.backgroundColor = .gray
+        }
+        addSubview(bottomSeparator)
     }
     
     func changeTitleColor(at index: Int) {

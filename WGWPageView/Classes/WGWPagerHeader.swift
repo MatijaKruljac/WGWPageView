@@ -19,7 +19,6 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
     
     weak var wgwPagerHeaderDelegate: WGWPagerHeaderDelegate?
     
-    private var finalWidth: CGFloat = 0.0
     private var titleLabels = [UILabel]()
     private var titleWidths = [CGFloat]()
     private(set) var currentTitleLabelIndex = 0
@@ -34,8 +33,7 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
             for title in dataSource {
                 titleWidths.append(title.width(withConstrainedHeight: frame.size.height, font: font))
             }
-            guard let longestTitleString = titleWidths.max() else { return }
-            generateTitleViewsForPages(with: longestTitleString)
+            generateTitleViewsForPages()
         }
     }
     
@@ -58,15 +56,17 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
     func addBottomSeparator(with height: CGFloat? = nil, andWith color: UIColor? = nil) {
         var bottomSeparatorFrame: CGRect!
         if let height = height {
-            bottomSeparatorFrame = CGRect(x: 0,
-                           y: frame.origin.y+frame.size.height-height,
-                           width: contentSize.width,
-                           height: height)
+            bottomSeparatorFrame = CGRect(
+                x: 0,
+                y: frame.origin.y+frame.size.height-height,
+                width: contentSize.width,
+                height: height)
         } else {
-            bottomSeparatorFrame = CGRect(x: 0,
-                           y: frame.origin.y+frame.size.height-1.0,
-                           width: contentSize.width,
-                           height: 1.0)
+            bottomSeparatorFrame = CGRect(
+                x: 0,
+                y: frame.origin.y+frame.size.height-1.0,
+                width: contentSize.width,
+                height: 1.0)
         }
         let bottomSeparator = UIView(frame: bottomSeparatorFrame)
         if let color = color {
@@ -109,28 +109,34 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
     
     private func sumAllTitleLabelWidths() -> CGFloat {
         var sum: CGFloat = 0.0
-        for titleLabel in titleLabels {
-            sum += titleLabel.frame.size.width
+        for titleWidth in titleWidths {
+            sum += titleWidth
         }
         return sum
     }
     
-    private func generateTitleViewsForPages(with longestTitleString: CGFloat) {
+    private func sumAllTitleLabelWidths(to index: Int) -> CGFloat {
+        var sum: CGFloat = 0.0
+        if index <= 0 { return sum }
+        for counter in 0...index-1 {
+            sum += titleWidths[counter]
+        }
+        return sum
+    }
+    
+    private func generateTitleViewsForPages() {
         guard let dataSource = dataSource else { return }
         
-        if frame.size.width > longestTitleString * CGFloat(dataSource.count) {
+        var finalWidth: CGFloat?
+        if frame.size.width > sumAllTitleLabelWidths() {
             finalWidth = frame.size.width / CGFloat(dataSource.count)
+            contentSize = CGSize(width: frame.size.width, height: frame.size.height)
         } else {
-            finalWidth = longestTitleString
+            contentSize = CGSize(width: sumAllTitleLabelWidths(), height: frame.size.height)
         }
-        contentSize = CGSize(width: finalWidth * CGFloat(dataSource.count), height: frame.size.height)
         
         for (index, title) in dataSource.enumerated() {
-            let titleLabel = UILabel(frame: CGRect(
-                x: CGFloat(index) * finalWidth,
-                y: 0,
-                width: finalWidth,
-                height: frame.size.height))
+            let titleLabel = UILabel(frame: generateFrameForTitleLabel(for: index, with: finalWidth))
             titleLabel.textAlignment = .center
             titleLabel.text = title
             titleLabel.tag = index
@@ -145,6 +151,21 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
             titleLabels.append(titleLabel)
             addSubview(titleLabel)
         }
+    }
+    
+    private func generateFrameForTitleLabel(for index: Int, with finalWidth: CGFloat?) -> CGRect {
+        if let finalWidth = finalWidth {
+            return CGRect(
+                x: CGFloat(index) * finalWidth,
+                y: 0,
+                width: finalWidth,
+                height: frame.size.height)
+        }
+        return CGRect(
+            x: sumAllTitleLabelWidths(to: index),
+            y: 0,
+            width: titleWidths[index],
+            height: frame.size.height)
     }
     
     @objc func handleHeaderLabelTap(_ tapGestureRecognizer: UITapGestureRecognizer) {

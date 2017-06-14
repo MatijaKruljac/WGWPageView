@@ -90,6 +90,7 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
     func scrollToTheTitle(at index: Int) {
         guard let dataSource = dataSource else { return }
         guard let longestTitleString = titleWidths.max() else { return }
+        if currentTitleLabelIndex == index { return }
         if frame.size.width > longestTitleString * CGFloat(dataSource.count) { return }
         
         if index >= titleLabels.count-2 {

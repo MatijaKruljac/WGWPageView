@@ -101,7 +101,7 @@ class WGWPagerHeader: UIScrollView, UIScrollViewDelegate {
             setContentOffset(offset, animated: true)
         } else {
             let titleLabel = titleLabels[index]
-            let offset = CGPoint(x: titleLabel.frame.origin.x, y: frame.origin.y)
+            let offset = CGPoint(x: titleLabel.frame.origin.x-titleLabel.frame.size.width/2, y: frame.origin.y)
             setContentOffset(offset, animated: true)
         }
         
